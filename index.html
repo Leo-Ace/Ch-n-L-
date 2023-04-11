@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tài-Xỉu / LeoAce..</title>
+  <link rel="stylesheet" href="./fontawesome-free-6.2.0-web/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+  <script src="./js/react.development.js" crossorigin></script>
+  <script src="./js/react-dom.development.js" crossorigin></script>
+  <script src="./js/babel.min.js"></script>
+</head>
+<body>
+
+  <section class="body">
+    <div class="main">
+      <div class="main_user">
+        <div class="logo" onclick="handleClickUser(this)">
+          <img src="./img/user2.png" alt="user" class="avatarUser">
+        </div>
+      </div>
+      <div class="formSetting">
+        <div class="iconexit">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+        <ul id="boxUl">
+          <li id="nameUser">
+            <span>
+              <img src="./img/user2.png" alt="user" class="avatarUser">
+            </span>
+          </li>
+          <li id="formValidation">
+            <div class="btnEventForm">
+              <span>LOG IN</span>
+            </div>
+            <div class="btnEventForm">
+              <span>SIGN UP</span>
+            </div>
+          </li>
+          <li id="guidePlayBtn" onclick="guidePlay()">
+            <span>Hướng dẫn chơi</span>
+          </li>
+        </ul>
+      </div>
+      <div class="exitFormHistory">
+        <i class="fa-regular fa-circle-xmark"></i>
+      </div>
+      <div id="guidePlay">
+        <ul>
+          <p><b>Trò chơi có 2 chế độ: </b></p>
+          <li>
+            <span>- Người chơi phải đăng nhập nếu muốn LÀM GIÀU!</span>
+          </li>
+          <li>
+            <span>- Trò chơi sẽ bắt đầu khi người chơi nhấn nút XÓC!</span>
+          </li>
+          <li>
+            <span>- Chỉ được đặt cược một cửa trong mỗi ván chơi!</span>
+          </li>
+          <p><b>Quy ước:</b></p>
+          <li>
+            <span>- Chẵn: 4 đỏ, 4 trắng hoặc 2 trắng 2 đỏ.</span>
+          </li>
+          <li>
+            <span>- Lẻ: 3 trắng 1 đỏ hoặc 3 đỏ 1 trắng.</span>
+          </li>
+          <li>
+            <span>- Đoán đúng 3 trắng 1 đỏ: Tỷ lệ trả thưởng là 1: 2.9</span>
+          </li>
+          <li>
+            <span>- Đoán trúng 3 đỏ 1 trắng: Tỷ lệ trả thưởng là 1:2.9</span>
+          </li>
+          <li>
+            <span>- Đoán trúng 4 đỏ: Nhà cái trả thưởng 1:14</span>
+          </li>
+          <li>
+            <span>- Đoán trúng 4 trắng: Nhà cái trả theo tỷ lệ 1:14</span>
+          </li>
+          <li>
+            <span>- Đặt cửa Chẵn: Tỷ lệ thưởng là 1:0.96</span>
+          </li>
+          <li>
+            <span>- Đặt cửa Lẻ: Nhận thưởng theo tỷ lệ 1:0.96</span>
+          </li>
+        </ul>
+      </div>
+      <div id="history">
+        <ul>
+          <!-- <li>
+            <div class="resultXoc">
+              <span class="coins">
+                <img src="./img/matDo.png" alt="xu">
+              </span>
+              <span class="coins">
+                <img src="./img/matDo.png" alt="xu">
+              </span>
+              <span class="coins">
+                <img src="./img/matDo.png" alt="xu">
+              </span>
+              <span class="coins">
+                <img src="./img/matDo.png" alt="xu">
+              </span>
+            </div>
+            <div class="resultWinOrLose">
+              <p>-> <b>Cầu CHẴN</b> : <b class="win">THUA -100.000.000</b></p>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+      <div class="form-Login-Signup">
+        <form action="#" id="form-Login-Signup">
+          <span style="--i: 0"></span>
+          <span style="--i: 1"></span>
+          <span style="--i: 2"></span>
+          <span style="--i: 3"></span>
+          <div class="container">
+            <div>
+              <input type="text" name="name" id="name" placeholder="Họ và tên">
+              <p></p>
+            </div>
+            <div>
+              <input type="password" name="pass" id="pass" placeholder="Mật khẩu">
+              <p></p>
+            </div>
+            <p></p>
+            <div>
+              <button type="button" id="btn-form"></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="main_nameGame">
+        <img src="./img/logo5.png" alt="logo">
+      </div>
+      <div class="main_regimes">
+        <div class="regime-item" id="entertaiment" onclick="regimeEntertaiment(this)">
+          <p class="text_content">Giải Trí</p>
+        </div>
+        <div class="regime-item lock" id="enRich">
+          <p class="text_content">Làm Giàu</p>
+        </div>
+      </div>
+      <div id="formMessage" ></div>
+      <div id="recharge"></div>
+    </div>
+    <div id="pageGames">
+      <div class="box-games">
+        <div class="tatble-game">
+          <div class="exitgame">
+            <div onclick="btnExitPageGame()">
+              <i class="fa-regular fa-circle-xmark"></i>
+            </div>
+            <div class="unexitgame" onclick="unExitGame()"></div>
+          </div>
+          <div class="table-group">
+            <div class="group-top">
+              <div class="item cuachan" id="cuachan">
+                <p class="name">Chẵn</p>
+                <p class="ratio">1:0.96</p>
+                <p class="betsMoney"></p>
+              </div>
+              <div class="item-box">
+                <div class="moneyUser">
+                  <span>10.000.000</span>
+                </div>
+                <div class="box-batdia">
+                  <div class="dia batdia">
+                    <img src="./img/đĩa.png" alt="dia">
+                    <div class="box-coins">
+                      <div>
+                        <span id="coin-1" class="coin">
+                          <img src="./img/matTrang.png" alt="xu">
+                        </span>
+                        <span id="coin-2" class="coin">
+                          <img src="./img/matDo.png" alt="xu">
+                        </span>
+                      </div>
+                      <div>
+                        <span id="coin-3" class="coin">
+                          <img src="./img/matDo.png" alt="xu">
+                        </span>
+                        <span id="coin-4" class="coin">
+                          <img src="./img/matDo.png" alt="xu">
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bat batdia">
+                    <img src="./img/bat22.png" alt="bat">
+                    <div class="setTime">
+                      <span></span>
+                      <button type="button" id="mo">Mở</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item cuale" id="cuale">
+                <p class="name">Lẻ</p>
+                <p class="ratio">1:0.96</p>
+                <p class="betsMoney"></p>
+              </div>
+            </div>
+            <div class="group-bottom">
+              <div class="item" id="1">
+                <p class="name">
+                  <span class="box-red"></span>
+                  <span class="box-red"></span>
+                  <span class="box-red"></span>
+                  <span class="box-red"></span>
+                </p>
+                <p class="ratio">1:14</p>
+                <p class="betsMoney"></p>
+              </div>
+              <div class="item mid" id="4">
+                <p class="name">
+                  <span class="box-red"></span>
+                  <span class="box-red"></span>
+                  <span class="box-red"></span>
+                  <span class="box-white"></span>
+                </p>
+                <p class="ratio">1:2.9</p>
+                <p class="betsMoney"></p>
+              </div>
+              <div class="item mid" id="2">
+                <p class="name">
+                  <span class="box-red"></span>
+                  <span class="box-white"></span>
+                  <span class="box-white"></span>
+                  <span class="box-white"></span>
+                </p>
+                <p class="ratio">1:2.9</p>
+                <p class="betsMoney"></p>
+              </div>
+              <div class="item" id="3">
+                <p class="name">
+                  <span class="box-white"></span>
+                  <span class="box-white"></span>
+                  <span class="box-white"></span>
+                  <span class="box-white"></span>
+                </p>
+                <p class="ratio">1:14</p>
+                <p class="betsMoney"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listMoneyToSelect">
+          <button value="1000" type="button" class="valueMoney">1K</button>
+          <button value="10000" type="button" class="valueMoney">10K</button>
+          <button value="50000" type="button" class="valueMoney">50K</button>
+          <button value="100000" type="button" class="valueMoney">100K</button>
+          <button value="500000" type="button" class="valueMoney">500K</button>
+          <button value="5000000" type="button" class="valueMoney">5M</button>
+          <button value="10000000" type="button" class="valueMoney">10M</button>
+          <button value="50000000" type="button" class="valueMoney">50M</button>
+        </div>
+        <div class="actUser">
+          <div>
+            <button type="button" id="all-in" value="10000000" class="valueMoney">ALL-IN</button>
+          </div>
+          <div>
+            <button type="button" id="running">XÓC</button>
+          </div>
+          <div>
+            <button type="button" id="cancel">HỦY</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script src="./js/script.js" type="text/babel"></script>
+</body>
+</html>

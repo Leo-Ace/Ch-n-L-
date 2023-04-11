@@ -1,0 +1,1852 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.body {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.body .main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/background_main.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.body .main::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border: 10px solid #050505;
+  -webkit-box-shadow: inset 0 0 10px #fff;
+          box-shadow: inset 0 0 10px #fff;
+}
+
+.body .main_user {
+  position: fixed;
+  top: 4%;
+  right: 2%;
+  z-index: 90;
+}
+
+.body .main_user .logo {
+  position: relative;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  z-index: 1000;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.body .main_user .logo img {
+  height: 70px;
+  width: 70px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid black;
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-pixelated;
+      image-rendering: pixelated;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.body .main_user .logo::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -0px;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.body .main_user .logo:hover {
+  -webkit-box-shadow: 0 0 20px 5px #002895;
+          box-shadow: 0 0 20px 5px #002895;
+  cursor: pointer;
+  color: black;
+  -webkit-transform: scale(1.2) !important;
+          transform: scale(1.2) !important;
+  -webkit-transform-origin: center !important;
+          transform-origin: center !important;
+}
+
+.body .main .formSetting {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.114);
+  display: none;
+}
+
+.body .main .formSetting .iconexit {
+  position: absolute;
+  top: 4%;
+  right: 2%;
+  border-radius: 50%;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+  z-index: 1000;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.body .main .formSetting .iconexit i {
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+  text-align: center;
+  background-color: rgba(188, 188, 188, 0.801);
+  color: #000;
+  font-size: 50px;
+  border-radius: 50%;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.body .main .formSetting > ul {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  color: #fff;
+  width: 300px;
+  background-color: #050505d7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0 10px 2px #fff;
+          box-shadow: 0 0 10px 2px #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  z-index: 200;
+  -webkit-transform: translate(320px);
+          transform: translate(320px);
+}
+
+@-webkit-keyframes onlyMenu1 {
+  from {
+    opacity: 1;
+    -webkit-transform: translate(320px);
+            transform: translate(320px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(-5px);
+            transform: translate(-5px);
+  }
+}
+
+@keyframes onlyMenu1 {
+  from {
+    opacity: 1;
+    -webkit-transform: translate(320px);
+            transform: translate(320px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(-5px);
+            transform: translate(-5px);
+  }
+}
+
+@-webkit-keyframes onlyMenu2 {
+  from {
+    opacity: 1;
+    -webkit-transform: translate(-5px);
+            transform: translate(-5px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(320px);
+            transform: translate(320px);
+  }
+}
+
+@keyframes onlyMenu2 {
+  from {
+    opacity: 1;
+    -webkit-transform: translate(-5px);
+            transform: translate(-5px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(320px);
+            transform: translate(320px);
+  }
+}
+
+.body .main .formSetting > ul > li {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.479);
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  font-size: 20px;
+}
+
+.body .main .formSetting > ul > li > span {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  display: inline-block;
+}
+
+.body .main .formSetting > ul > li:hover {
+  cursor: pointer;
+  background-color: #000;
+}
+
+.body .main .formSetting > ul > li:hover span {
+  -webkit-box-shadow: 0 0 10px #fff;
+          box-shadow: 0 0 10px #fff;
+}
+
+.body .main .formSetting > ul > li:hover p {
+  -webkit-box-shadow: 0 0 10px #fff;
+          box-shadow: 0 0 10px #fff;
+}
+
+.body .main .formSetting > ul > li:active span {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.body .main .formSetting > ul .btnLogOut {
+  color: #058dee;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.body .main .formSetting > ul .btnLogOut:hover {
+  cursor: pointer;
+  background-color: #000;
+}
+
+.body .main .formSetting > ul .btnLogOut:hover span {
+  color: #c5c4c5;
+}
+
+.body .main .formSetting > ul #nameUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.body .main .formSetting > ul #nameUser > span {
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 2px solid #fff;
+  background-color: #fff;
+  color: #fff;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.body .main .formSetting > ul #nameUser > span img {
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-pixelated;
+      image-rendering: pixelated;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.body .main .formSetting > ul #nameUser p {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  text-align: center;
+  font-size: 24px;
+  overflow-x: auto;
+}
+
+.body .main .formSetting > ul #nameUser .evenClickAvatar {
+  position: absolute;
+  top: -200px;
+  background-color: #fff;
+}
+
+@-webkit-keyframes onlyFormdowmavt {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+  }
+}
+
+@keyframes onlyFormdowmavt {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+  }
+}
+
+@-webkit-keyframes onlyFormdowmavt2 {
+  from {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes onlyFormdowmavt2 {
+  from {
+    -webkit-transform: translateY(200px);
+            transform: translateY(200px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.body .main .formSetting > ul #nameUser .evenClickAvatar div {
+  width: 100%;
+  color: black;
+  -webkit-box-shadow: 0 0 10px grey;
+          box-shadow: 0 0 10px grey;
+  border: 1px solid black;
+}
+
+.body .main .formSetting > ul #nameUser .evenClickAvatar div:hover {
+  background-color: grey;
+}
+
+.body .main .formSetting > ul #nameUser .evenClickAvatar div a {
+  width: 100%;
+  color: black;
+  font-size: 18px;
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.body .main .formSetting > ul #nameUser .evenClickAvatar div a:active {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.body .main .formSetting > ul #nameUser .evenClickAvatar div input {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+}
+
+.body .main .formSetting > ul #nameUser .evenClickAvatar div input::before {
+  position: absolute;
+  content: 'Tải ảnh đại diện';
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 18px;
+}
+
+.body .main .formSetting > ul #nameUser .evenClickAvatar div input:hover::before {
+  cursor: pointer;
+  background-color: grey;
+}
+
+.body .main .formSetting > ul #formValidation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+}
+
+.body .main .formSetting > ul #formValidation div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+}
+
+.body .main .formSetting > ul #formValidation div:first-child {
+  border-right: 2px solid rgba(255, 255, 255, 0.479);
+}
+
+.body .main .formSetting > ul #formValidation div:hover {
+  cursor: pointer;
+  background-color: #000;
+}
+
+.body .main .formSetting > ul #formValidation div:hover span {
+  -webkit-box-shadow: 0 0 10px #fff;
+          box-shadow: 0 0 10px #fff;
+}
+
+.body .main .formSetting > ul #formValidation div:active span {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.body .main .formSetting > ul #formValidation:hover {
+  cursor: auto;
+  background-color: #05050500;
+}
+
+.body .main .formSetting > ul #formValidation:hover span {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.body .main .formSetting > ul #formValidation:active span {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.body .main #guidePlay {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow-y: overlay;
+  display: none;
+}
+
+.body .main #guidePlay ul {
+  display: inline-block;
+  width: 450px;
+  padding: 15px;
+}
+
+.body .main #guidePlay ul li {
+  line-height: 30px;
+}
+
+.body .main #history {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  right: 10px;
+  z-index: 1000;
+  background-color: #fff;
+  border-radius: 15px 0 0 15px;
+  display: none;
+  overflow-y: overlay;
+}
+
+.body .main #history ul {
+  display: inline-block;
+  width: 500px;
+  padding: 15px;
+}
+
+.body .main #history ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-shadow: 0 0 6px black;
+          box-shadow: 0 0 6px black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.body .main #history ul li .resultXoc {
+  -ms-flex-preferred-size: 36%;
+      flex-basis: 36%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.body .main #history ul li .resultXoc .coins {
+  width: 22%;
+}
+
+.body .main #history ul li .resultXoc .coins img {
+  width: 100%;
+}
+
+.body .main #history ul li .resultWinOrLose {
+  font-size: 17px;
+}
+
+.body .main #history ul li .resultWinOrLose .lose {
+  color: red;
+}
+
+.body .main #history ul li .resultWinOrLose .win {
+  color: #00d80e;
+}
+
+.body .main .exitFormHistory {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 40px;
+  background-color: #000;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  padding: 2px;
+  display: none;
+  z-index: 1001;
+}
+
+.body .main .exitFormHistory i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.body .main_nameGame {
+  position: relative;
+  margin: auto;
+  width: 30%;
+  font-size: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50vh;
+  z-index: 10;
+}
+
+.body .main_nameGame img {
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-pixelated;
+      image-rendering: pixelated;
+  width: 100%;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.body .main_nameGame img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: none;
+}
+
+.body .main_regimes {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  color: #fff;
+  font-size: 60px;
+  z-index: 0;
+}
+
+.body .main_regimes .regime-item {
+  position: relative;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  border-radius: 20px;
+  font-family: 'pacifico';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  color: #050505;
+  padding: 20px;
+  -webkit-box-shadow: 0 0 7px #fff, 0 0 10px 2px #000;
+          box-shadow: 0 0 7px #fff, 0 0 10px 2px #000;
+  border: 1px solid rgba(255, 255, 255, 0.277);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.body .main_regimes .regime-item .text_content {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  text-shadow: 0 0 10px #fff;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.body .main_regimes .regime-item:hover {
+  cursor: pointer;
+  background: #05050577;
+}
+
+.body .main_regimes .regime-item:hover .text_content {
+  -webkit-transform: translateY(-10px) scale(1.5);
+          transform: translateY(-10px) scale(1.5);
+  text-shadow: 0 0 10px #fff, 0 0 10px red;
+}
+
+.body .main_regimes .lock {
+  overflow: hidden;
+}
+
+.body .main_regimes .lock::before {
+  content: '\f023';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  background-color: rgba(255, 255, 255, 0.288);
+  font-size: 40px;
+  color: black;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.body .main_regimes .lock:hover {
+  cursor: pointer;
+  background: #05050577;
+}
+
+.body .main_regimes .lock:hover .text_content {
+  -webkit-transform: none;
+          transform: none;
+  text-shadow: none;
+}
+
+.body .main_regimes .lock:hover::before {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.body .main .form-Login-Signup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.103);
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  visibility: hidden;
+}
+
+.body .main .form-Login-Signup form {
+  position: relative;
+  background: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 10px #fff;
+          box-shadow: 0 0 10px #fff;
+  border: 2px solid black;
+  width: 350px;
+  height: 350px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+@-webkit-keyframes onlyroom {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes onlyroom {
+  from {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.body .main .form-Login-Signup form .container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid #1c378f;
+  padding: 20px;
+  text-align: center;
+  -webkit-box-shadow: 0 5px 10px rgba(9, 0, 0, 0.5);
+          box-shadow: 0 5px 10px rgba(9, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.body .main .form-Login-Signup form .container div {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.body .main .form-Login-Signup form .container div input, .body .main .form-Login-Signup form .container div button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+  background: rgba(47, 20, 250, 0.518);
+  color: #000;
+  border: 1px solid rgba(47, 20, 250, 0.518);
+}
+
+.body .main .form-Login-Signup form .container div input::-webkit-input-placeholder, .body .main .form-Login-Signup form .container div button::-webkit-input-placeholder {
+  color: #000;
+}
+
+.body .main .form-Login-Signup form .container div input:-ms-input-placeholder, .body .main .form-Login-Signup form .container div button:-ms-input-placeholder {
+  color: #000;
+}
+
+.body .main .form-Login-Signup form .container div input::-ms-input-placeholder, .body .main .form-Login-Signup form .container div button::-ms-input-placeholder {
+  color: #000;
+}
+
+.body .main .form-Login-Signup form .container div input::placeholder, .body .main .form-Login-Signup form .container div button::placeholder {
+  color: #000;
+}
+
+.body .main .form-Login-Signup form .container div button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 50%;
+  color: #fff;
+  -webkit-box-shadow: 0 0 6px #fff, 0 0 6px #000;
+          box-shadow: 0 0 6px #fff, 0 0 6px #000;
+  background-color: #873737;
+  border: none;
+}
+
+.body .main .form-Login-Signup form .container div button:hover {
+  cursor: pointer;
+  -webkit-transform: translateX(-50%) scale(1.055);
+          transform: translateX(-50%) scale(1.055);
+}
+
+.body .main .form-Login-Signup form .container div button:active {
+  -webkit-transform: translateX(-50%) scale(0.9);
+          transform: translateX(-50%) scale(0.9);
+}
+
+.body .main .form-Login-Signup form .container div p {
+  text-align: left;
+  color: red;
+  font-size: 15px;
+  padding: 5px 0;
+}
+
+.body .main .form-Login-Signup form .container p {
+  height: 20px;
+}
+
+.body .main .form-Login-Signup form span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: rotate(calc(var(--i) * 90deg));
+          transform: rotate(calc(var(--i) * 90deg));
+}
+
+.body .main .form-Login-Signup form span:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #0819ff;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    background: red;
+  }
+  50% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    background: green;
+  }
+  50.1% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    background: #4ec4ff;
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    background: #1c5cff;
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    background: red;
+  }
+  50% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    background: green;
+  }
+  50.1% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    background: #4ec4ff;
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    background: #1c5cff;
+  }
+}
+
+.body .main #formMessage {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 1000;
+}
+
+.body .main #formMessage div {
+  width: 350px;
+  padding: 20px;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  -webkit-transform: translate(-350px);
+          transform: translate(-350px);
+  -webkit-animation: onlyformMessage 8s cubic-bezier(0.075, 2, 0.065, 1) forwards;
+          animation: onlyformMessage 8s cubic-bezier(0.075, 2, 0.065, 1) forwards;
+}
+
+@-webkit-keyframes onlyformMessage {
+  50% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translate(-350px);
+            transform: translate(-350px);
+  }
+}
+
+@keyframes onlyformMessage {
+  50% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translate(-350px);
+            transform: translate(-350px);
+  }
+}
+
+.body .main #formMessage .error {
+  background-color: rgba(226, 148, 148, 0.419);
+  color: #000;
+  border: 1px solid red;
+  font-weight: bold;
+}
+
+.body .main #formMessage .error i {
+  color: red;
+}
+
+.body .main #formMessage .success {
+  background-color: rgba(171, 226, 148, 0.419);
+  color: #000;
+  border: 1px solid greenyellow;
+  font-weight: bold;
+}
+
+.body .main #formMessage .success i {
+  color: greenyellow;
+}
+
+.body .main #recharge {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+  background-color: rgba(128, 128, 128, 0.183);
+  display: none;
+}
+
+.body .main #recharge form {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  -webkit-box-shadow: inset 0 0 10px black;
+          box-shadow: inset 0 0 10px black;
+  border-radius: 10px;
+  -webkit-animation: onlyformRechargeOut 0.3s linear forwards;
+          animation: onlyformRechargeOut 0.3s linear forwards;
+}
+
+@-webkit-keyframes onlyformRechargeOut {
+  from {
+    -webkit-transform: translate(-320px);
+            transform: translate(-320px);
+  }
+  to {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes onlyformRechargeOut {
+  from {
+    -webkit-transform: translate(-320px);
+            transform: translate(-320px);
+  }
+  to {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@-webkit-keyframes onlyformRechargeIn {
+  to {
+    -webkit-transform: translate(-320px);
+            transform: translate(-320px);
+  }
+  from {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes onlyformRechargeIn {
+  to {
+    -webkit-transform: translate(-320px);
+            transform: translate(-320px);
+  }
+  from {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+.body .main #recharge form .form-group {
+  width: 100%;
+}
+
+.body .main #recharge form .form-group label {
+  display: inline-block;
+  color: black;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.body .main #recharge form .form-group select, .body .main #recharge form .form-group input, .body .main #recharge form .form-group button {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: 1px solid grey;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.body .main #recharge form .form-group:last-child {
+  text-align: center;
+}
+
+.body .main #recharge form .form-group:last-child button {
+  width: 50%;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.body .main #recharge form .form-group:last-child button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.854);
+}
+
+.body .main #recharge form .form-group + .form-group {
+  margin-top: 15px;
+}
+
+.body #pageGames {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 60;
+  background-color: #00000095;
+  display: none;
+}
+
+.body #pageGames .box-games {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 60;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 0;
+  -webkit-transform: scale(0.4);
+          transform: scale(0.4);
+}
+
+@-webkit-keyframes onlyboxgames {
+  from {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes onlyboxgames {
+  from {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.body #pageGames .box-games .tatble-game {
+  position: relative;
+  width: 55%;
+  height: 65%;
+  border-radius: 170px;
+  display: inline-block;
+  background-color: white;
+  background-image: url(../img/banner3.webp);
+  background-size: 100%;
+  border: 2px solid #00ff08;
+}
+
+.body #pageGames .box-games .tatble-game .exitgame {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  z-index: 1000;
+}
+
+.body #pageGames .box-games .tatble-game .exitgame div i {
+  color: #fff;
+  font-size: 50px;
+}
+
+.body #pageGames .box-games .tatble-game .exitgame:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.body #pageGames .box-games .tatble-game .exitgame:active {
+  cursor: pointer;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.body #pageGames .box-games .tatble-game .exitgame .unexitgame {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  z-index: 80;
+  display: none;
+}
+
+.body #pageGames .box-games .tatble-game .table-group {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 255, 0.605);
+  border: 2px solid #00ff08;
+  border-radius: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  background-image: url(../img/banner4.jpg);
+  background-size: 100%;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top, .body #pageGames .box-games .tatble-game .table-group .group-bottom {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 200px 200px 0 0;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item {
+  -ms-flex-preferred-size: 38%;
+      flex-basis: 38%;
+  width: 100%;
+  height: 100%;
+  border-radius: 200px 15px 15px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url(../img/banner7.jpg);
+  border: 1px solid #ffffffc9;
+  -webkit-box-shadow: inset 0 0 1px #fff, 0 0 10px #000;
+          box-shadow: inset 0 0 1px #fff, 0 0 10px #000;
+  overflow: hidden;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item .betsMoney, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item .betsMoney {
+  padding: 10px;
+  border: 1px solid violet;
+  border-radius: 5px;
+  width: 50%;
+  height: 30px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item .name, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item .name {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  width: 55%;
+  text-align: right;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item .ratio, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item .ratio {
+  padding: 10px 0 15px 0;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  width: 50%;
+  text-align: right;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item:last-child, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item:last-child {
+  border-radius: 15px 200px 15px 15px;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item:last-child .name, .body #pageGames .box-games .tatble-game .table-group .group-top .item:last-child .ratio, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item:last-child .name, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item:last-child .ratio {
+  width: 50%;
+  text-align: left;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box {
+  position: relative;
+  height: 100%;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .moneyUser, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .moneyUser {
+  -webkit-transform: translate(-13px, -15px);
+          transform: translate(-13px, -15px);
+  -webkit-box-shadow: inset 0 0 50px 2px black, 0 0 10px #000;
+          box-shadow: inset 0 0 50px 2px black, 0 0 10px #000;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  width: 120%;
+  color: orange;
+  text-shadow: 0 0 6px black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia {
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 0 20px black, 0 0 10px black;
+          box-shadow: inset 0 0 20px black, 0 0 10px black;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+  width: 100%;
+  padding-top: 5px;
+}
+
+@-webkit-keyframes onlyxocdia {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  33% {
+    -webkit-transform: translateY(7px);
+            transform: translateY(7px);
+  }
+  66% {
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes onlyxocdia {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  33% {
+    -webkit-transform: translateY(7px);
+            transform: translateY(7px);
+  }
+  66% {
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia .dia, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia .dia {
+  position: relative;
+  border-radius: 50%;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia .dia img, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia .dia img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia .dia .box-coins, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia .dia .box-coins {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia .dia .box-coins div .coin, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia .dia .box-coins div .coin {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia .dia .box-coins div .coin img, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia .dia .box-coins div .coin img {
+  width: 100%;
+  border-radius: 50%;
+  padding: 2px 4px;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia .bat, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia .bat {
+  position: absolute;
+  width: 94px;
+  height: 94px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  margin-bottom: 3px;
+  z-index: 20;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia .bat img, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia .bat img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes onlymobat {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-75px);
+            transform: translateY(-75px);
+  }
+}
+
+@keyframes onlymobat {
+  from {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-75px);
+            transform: translateY(-75px);
+  }
+}
+
+@-webkit-keyframes onlydongbat {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  from {
+    -webkit-transform: translateY(-75px);
+            transform: translateY(-75px);
+  }
+}
+
+@keyframes onlydongbat {
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  from {
+    -webkit-transform: translateY(-75px);
+            transform: translateY(-75px);
+  }
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia .bat .setTime, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia .bat .setTime {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: red;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia .bat .setTime button, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia .bat .setTime button {
+  padding: 6px 8px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  outline: 0;
+  border: 0;
+  border-radius: 20px;
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 0 10px black, 0 0 6px grey;
+          box-shadow: inset 0 0 10px black, 0 0 6px grey;
+  display: none;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top .item-box .box-batdia .bat .setTime button:hover, .body #pageGames .box-games .tatble-game .table-group .group-bottom .item-box .box-batdia .bat .setTime button:hover {
+  cursor: pointer;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom {
+  border-radius: 0 0 200px 200px;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .item {
+  -ms-flex-preferred-size: 24%;
+      flex-basis: 24%;
+  border-radius: 15px 15px 15px 200px;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .item .name {
+  width: auto !important;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  font-size: medium;
+  text-align: center;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .item .name span {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .item .name .box-red {
+  background-color: red;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .item .name .box-white {
+  background-color: #fff;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .item .ratio {
+  width: auto;
+  text-align: center !important;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .item .betsMoney {
+  width: 70%;
+  margin-bottom: 40px;
+  margin-left: 30px;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .mid {
+  border-radius: 10px;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .mid .betsMoney {
+  margin-right: 30px;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .item:last-child {
+  border-radius: 15px 15px 200px 15px;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-bottom .item:last-child .betsMoney {
+  margin-right: 50px;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .item:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  cursor: pointer;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .item:hover .name {
+  cursor: pointer;
+  text-shadow: 0 0 5px red;
+}
+
+.body #pageGames .box-games .tatble-game .table-group .group-top + .group-bottom {
+  margin-top: 20px;
+}
+
+.body #pageGames .box-games .listMoneyToSelect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 20px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  overflow: hidden;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  -webkit-animation: onlylistmoney 2s linear 1s forwards;
+          animation: onlylistmoney 2s linear 1s forwards;
+}
+
+@-webkit-keyframes onlylistmoney {
+  from {
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+@keyframes onlylistmoney {
+  from {
+    -webkit-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+  }
+  to {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+.body #pageGames .box-games .listMoneyToSelect .valueMoney {
+  width: 80px;
+  padding: 5px;
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+  outline: 0;
+  border: 2px solid transparent;
+  -webkit-box-shadow: 0 0 10px blue, inset 0 0 10px black;
+          box-shadow: 0 0 10px blue, inset 0 0 10px black;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.body #pageGames .box-games .listMoneyToSelect .valueMoney:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.body #pageGames .box-games .actUser {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  opacity: 0;
+  -webkit-animation: onlyactuser 2s linear 1s forwards;
+          animation: onlyactuser 2s linear 1s forwards;
+}
+
+@-webkit-keyframes onlyactuser {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes onlyactuser {
+  to {
+    opacity: 1;
+  }
+}
+
+.body #pageGames .box-games .actUser div button {
+  width: 100px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: violet;
+  outline: 0;
+  border: 1px solid grey;
+  border-radius: 100px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.body #pageGames .box-games .actUser div button:hover {
+  color: black;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.body #pageGames .box-games .actUser div #all-in {
+  background-color: #990499;
+  -webkit-box-shadow: 0 0 6px #3b3b3b, inset 0 0 15px violet;
+          box-shadow: 0 0 6px #3b3b3b, inset 0 0 15px violet;
+}
+
+.body #pageGames .box-games .actUser div #running {
+  padding: 15px;
+  width: 150px;
+  background-color: #bd7b00;
+  -webkit-box-shadow: 0 0 6px #404040, inset 0 0 15px orange;
+          box-shadow: 0 0 6px #404040, inset 0 0 15px orange;
+}
+
+.body #pageGames .box-games .actUser div #cancel {
+  background-color: #980707;
+  -webkit-box-shadow: 0 0 6px #3d3d3d, inset 0 0 15px #ff2c2c;
+          box-shadow: 0 0 6px #3d3d3d, inset 0 0 15px #ff2c2c;
+}
+
+@font-face {
+  font-family: 'bangers';
+  src: url(../font-family/Bangers.ttf);
+}
+
+@font-face {
+  font-family: 'pacifico';
+  src: url(../font-family/Pacifico-Regular.ttf);
+}
+/*# sourceMappingURL=style.css.map */
